@@ -1,35 +1,30 @@
+
 <!DOCTYPE html>
 {% load static %}
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Studybud</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-        {% block MAIN_STYLE %}
-        
-        <style>
-            label.btn.btn-outline-light.toggle-on {
-                padding: 0.1rem 1rem !important;
-            }
-            label.btn.btn-outline-light.toggle-off {
-                padding: 0.1rem 1rem !important;
-            }
-        </style>
-        {% endblock MAIN_STYLE %}
-    </head>
-    <body>
-        {% include 'navbar.html' %}
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        {% block MAIN_CONTENT %}
-        {% endblock MAIN_CONTENT %}
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>StudyBuddy - Find study partners around the world!</title>
+    {% block MAIN_STYLE %}
+    {% endblock MAIN_STYLE %}
+  </head>
+
+  <body>
+    
+    {% include 'navbar.html' %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% block MAIN_CONTENT %}
+    {% endblock MAIN_CONTENT %}
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
 </html>
